@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TV Lokal Indonesia</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body { background: #000; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+    video { width: 100%; max-width: 700px; margin-top: 20px; }
+    select { width: 90%; max-width: 400px; padding: 10px; font-size: 16px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>📺 TV Lokal Indonesia</h1>
+  <p>Pilih channel untuk mulai menonton</p>
+
+  <!-- Video Player -->
+  <video id="video" controls autoplay></video>
+
+  <!-- Channel List -->
+  <select id="channelList">
+    <option value="">-- Pilih Channel --</option>
+    <option value="http://stream.rcti.tv/chunklist.m3u8">RCTI</option>
+    <option value="http://stream.sctv.tv/chunklist.m3u8">SCTV</option>
+    <option value="http://stream.antv.tv/chunklist.m3u8">ANTV</option>
+    <option value="http://stream.indosiar.tv/chunklist.m3u8">Indosiar</option>
+    <option value="http://stream.transtv.tv/chunklist.m3u8">Trans TV</option>
+    <option value="http://stream.trans7.tv/chunklist.m3u8">Trans7</option>
+    <option value="http://stream.metrotvnews.tv/live/chunklist.m3u8">Metro TV</option>
+    <option value="https://live.kompas.tv/streaming/kompastv/chunklist.m3u8">Kompas TV</option>
+    <option value="http://stream.inews.tv/live/chunklist.m3u8">iNews</option>
+    <option value="http://stream.nettv.tv/chunklist.m3u8">NET TV</option>
+  </select>
+
+  <script>
+    const video = document.getElementById('video');
+    const channelList = document.getElementById('channelList');
+    let hls;
+
+    function loadStream(url) {
+      if (hls) hls.destroy();
+      if (url.endsWith('.m3u8')) {
+        if(Hls.isSupported()) {
+          hls = new Hls();
+          hls.loadSource(url);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+        } else {
+          alert("Browser tidak mendukung HLS");
+        }
+      } else {
+        video.src = url;
+        video.play();
+      }
+    }
+
+    channelList.addEventListener('change', () => {
+      const selectedUrl = channelList.value;
+      if (selectedUrl) loadStream(selectedUrl);
+    });
+  </script>
+
+</body>
+</html>
