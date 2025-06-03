@@ -1,0 +1,32 @@
+m3u
+#EXTM3U
+
+#EXTINF:-1 tvg-name="RCTI" group-title="Berita",RCTI
+http://stream.rcti.tv/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="SCTV" group-title="Hiburan",SCTV
+http://stream.sctv.tv/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="ANTV" group-title="Berita",ANTV
+http://stream.antv.tv/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="Indosiar" group-title="Olahraga",Indosiar
+http://stream.indosiar.tv/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="Trans TV" group-title="Hiburan",Trans TV
+http://stream.transtv.tv/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="Trans7" group-title="Anak & Remaja",Trans7
+http://stream.trans7.tv/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="Metro TV" group-title="Berita",Metro TV
+http://stream.metrotvnews.tv/live/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="Kompas TV" group-title="Berita",Kompas TV
+https://live.kompas.tv/streaming/kompastv/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="iNews" group-title="Berita",iNews
+http://stream.inews.tv/live/chunklist.m3u8
+
+#EXTINF:-1 tvg-name="NET TV" group-title="Anak & Hiburan",NET TV
+http://stream.nettv.tv/chunklist.m3u8
